@@ -58,7 +58,7 @@ class Cleverbot:
 
     def ask(self,q):
         """Asks Cleverbot a question.
-        
+
         Maintains message history.
 
         Args:
@@ -91,7 +91,7 @@ class Cleverbot:
         return parsed['answer']
 
     def _send(self):
-        """POST the user's question and all required information to the 
+        """POST the user's question and all required information to the
         Cleverbot API
 
         Cleverbot tries to prevent unauthorized access to its API by
@@ -146,16 +146,3 @@ class Cleverbot:
 
         if self.DEBUG:
             print args
-
-if __name__ == "__main__":
-    cb1 = Cleverbot()
-    cb2 = Cleverbot()
-
-    resp1 = cb1.ask("Hello.")
-    print "Bob:", "Hello"
-
-    while True:
-        print "Alice:", resp1
-        resp2 = cb2.ask(resp1)
-        print "Bob:", resp2
-        resp1 = cb1.ask(resp2)
